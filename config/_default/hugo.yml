@@ -1,0 +1,13 @@
+baseURL: "/"
+uglyurls: true
+relativeURLs: true
+canonifyURLs: false
+
+title: STARS What's New Popup
+theme: starsPopup
+
+disableKinds:
+  - taxonomy
+  - term
+  - sitemap
+  - rss

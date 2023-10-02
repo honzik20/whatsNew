@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  {{range first 1 .Site.RegularPages.ByTitle.Reverse }}
+    {{- partial "head.html" . -}}
+    <title>{{ .Title }}</title>
+    <meta
+      property="releaseDate"
+      content="{{ time.Format ":date_long" .Date }}" />
+    <body id="popup">
+        {{- partial "header.html" . -}}
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+    </body>
+    {{ end }}
+</html>

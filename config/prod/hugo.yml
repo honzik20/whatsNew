@@ -1,0 +1,13 @@
+baseURL: ""
+uglyurls: true
+relativeURLs: true
+canonifyurls: false
+
+title: My New Hugo Site
+theme: starsPopup
+
+disableKinds:
+  - taxonomy
+  - term
+  - sitemap
+  - rss
