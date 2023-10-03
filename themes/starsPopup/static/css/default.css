@@ -1,6 +1,7 @@
 :root {
   --p500: #2a6cd3;
   --p550: #2867c9;
+  --s500: #8495ac;
   --s600: #667b97;
   --s775: #424f61;
   --s900: #28303c;
@@ -14,32 +15,55 @@
 
 html {
   font-size: 100%;
-  width: 60%;
-  border: 1px solid black;
 }
 
 body {
   font-family: "Arial";
   font-size: 16px;
   margin: 0px;
-  padding-top: 4px;
-  margin-left: 48px;
-  margin-right: 48px;
+  height: 100%;
 }
 
-#whats-new-header {
+.container {
+  max-height: 60%;
+  max-height: 60vh;
+  min-height: 60%;
+  min-height: 60vh;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  margin-left: 48px;
+  margin-right: 48px;
+  border-bottom: 1px solid var(--s500);
+}
+
+.header {
+  max-height: 128px;
+
   & .title {
     font-size: 2rem;
+    margin-top: 36px;
+    color: var(--p500);
   }
 
   & .product {
     font-size: 1.5rem;
     color: var(--s600);
-    margin-top: 4px;
+    margin-top: 10px;
+    margin-bottom: 19px;
   }
 }
 
-#popup {
+hr {
+  border-bottom: 1px solid var(--s500);
+}
+
+.content {
+  max-height: inherit;
+  overflow: auto;
+  margin-top: 1rem;
+
   & p {
     font-weight: normal;
     font-size: 16px;
@@ -96,6 +120,10 @@ body {
       line-height: 1.25rem;
       margin-bottom: 0;
     }
+
+    & #content {
+      overflow: scroll;
+    }
   }
 
   /********** Links **********/
@@ -143,8 +171,7 @@ body {
     background: var(--linkFocusBackground);
   }
 
-  & /* Links that start with "http" or "starshelp:"" */
-  a[href^="http"]::after,
+  & a[href^="http"]::after,
   a[href^="starshelp"]::after {
     content: "";
     width: 11px;
@@ -158,22 +185,19 @@ body {
   }
 }
 
-table.metaTable,
-th,
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th,
-td {
-  padding: 5px;
-  text-align: left;
+/**** Dropdown ******/
+
+.dropdown {
+  display: inline-block;
+  position: relative;
 }
 
-.note {
-  background-color: #dbdfe6;
-  border-left: 6px solid var(--p500);
-  margin-top: 20px;
-  margin-bottom: 15px;
-  padding: 4px 12px;
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
 }
