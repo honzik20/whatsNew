@@ -1,5 +1,16 @@
 <header class="header" role="heading" aria-level="1">
+  {{ $title := .Title }}
   <h1 class="title">What's New</h1>
-  <h2 class="product">{{ .Title }}</h2>
-  <hr>
+
+  <div class="dropdown">
+    <h2 class="product">{{ $title }}</h2>
+    {{ $releases := where .Site.RegularPages "Title" "<>" .Title }}
+    {{ if ge (len $releases) 1 }}
+    <div class="dropdown-content">
+      {{ range $releases }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+    </div>
+    {{ end }}
+  </div>
 </header>
