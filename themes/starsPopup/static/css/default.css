@@ -20,22 +20,22 @@ html {
 body {
   font-family: "Arial";
   font-size: 16px;
-  margin: 0px;
+  margin: 0;
   height: 100%;
+  max-width: 60%;
 }
 
 .container {
-  max-height: 60%;
-  max-height: 60vh;
-  min-height: 60%;
-  min-height: 60vh;
-  max-width: 60%;
+  height: 60vh;
+  margin-bottom: 80px;
+  min-height: calc(60vh - 80px);
   display: flex;
   flex-direction: column;
   padding-top: 0px;
-  margin-left: 48px;
+  padding-bottom: 80px;
+  padding-left: 48px;
   margin-right: 48px;
-  border-bottom: 1px solid var(--s500);
+  border: 1px solid var(--s500);
 }
 
 .header {
@@ -44,14 +44,15 @@ body {
   & .title {
     font-size: 2rem;
     margin-top: 36px;
+    margin-bottom: 0px;
     color: var(--p500);
   }
 
   & .product {
     font-size: 1.5rem;
     color: var(--s600);
-    margin-top: 10px;
     margin-bottom: 8px;
+    margin-top: 8px;
   }
 }
 
@@ -60,41 +61,57 @@ hr {
 }
 
 .dropdown { 
-    display: inline-block; 
-    position: relative;
-    background-color: white;
+  display: inline-block;
+  position: relative;
+  left:78.5%;
+  bottom:29%;
 } 
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: white;
+  color: black;
+  border: solid 1px var(--p500);
+  padding: 8px 64px 8px 8px;
+  font-size: 16px;
+  margin-right: 24px;
+}
+
+/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-      display: none;
-      position: absolute;
-      width: 100%;
-      overflow: auto;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
-      display: block;
-}
-
+/* Links inside the dropdown */
 .dropdown-content a {
-      display: block;
-      background-color: white;
-      color: #000000;
-      padding: 5px;
-      text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-.dropdown-content a:hover {
-      color: #FFFFFF;
-      background-color: var(--s500);
-}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 .content {
   max-height: inherit;
   overflow: auto;
-  margin-top: 1.5rem;
+  margin-top: .5rem;
   border-top: solid 1px var(--s500);
+  border-bottom: solid 1px var(--s500);
+  margin-right: 48px;
+  padding-right: 15%;
 
   & p {
     font-weight: normal;
